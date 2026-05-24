@@ -1,0 +1,318 @@
+/* ===== HERO БЛОК ===== */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 0 40px;
+}
+
+.hero-left {
+    flex: 1;
+    min-width: 280px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(0, 204, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 40px;
+    padding: 6px 18px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(0, 204, 255, 0.4);
+    margin-bottom: 24px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #ffffff, #b6b9ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    color: #bdc6f0;
+    margin-bottom: 32px;
+    max-width: 550px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #a5f3ff;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #8892b0;
+}
+
+/* ===== ПРАВАЯ ЧАСТЬ HERO ===== */
+.hero-right {
+    flex: 1;
+    position: relative;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glow-orb {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(0,204,255,0.3), rgba(139,92,246,0.1));
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+.floating-card {
+    position: absolute;
+    background: rgba(15, 20, 45, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid #4f46e5;
+    border-radius: 20px;
+    padding: 16px 24px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    top: 20%;
+    right: 10%;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.floating-card i {
+    font-size: 1.5rem;
+    color: #2dd4ff;
+}
+
+/* ===== ПРЕВЬЮ СБОРОВ ===== */
+.preview-campaigns {
+    margin-top: 60px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+}
+
+.see-all {
+    color: #c084fc;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.see-all:hover {
+    text-shadow: 0 0 5px #c084fc;
+}
+
+/* Сетка карточек */
+.campaigns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
+}
+
+/* Карточка сбора */
+.campaign-card {
+    background: rgba(15, 20, 45, 0.6);
+    backdrop-filter: blur(8px);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(79, 70, 229, 0.3);
+}
+
+.campaign-card:hover {
+    transform: translateY(-5px);
+    border-color: #c084fc;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.campaign-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.campaign-info {
+    padding: 20px;
+}
+
+.campaign-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.campaign-category {
+    display: inline-block;
+    background: rgba(0, 204, 255, 0.15);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    margin-bottom: 12px;
+}
+
+.progress-bar {
+    background: #2a2a4a;
+    border-radius: 10px;
+    height: 8px;
+    overflow: hidden;
+    margin: 12px 0;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #2dd4ff, #a855f7);
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.campaign-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #8892b0;
+    margin: 12px 0;
+}
+
+.campaign-raised {
+    color: #a5f3ff;
+    font-weight: 600;
+}
+
+.campaign-target {
+    font-weight: 600;
+}
+
+/* Кнопка в карточке */
+.donate-small {
+    width: 100%;
+    margin-top: 16px;
+    padding: 10px;
+    background: linear-gradient(135deg, #0a2b5c, #1e1a4b);
+    border: 1px solid #4f46e5;
+    border-radius: 40px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.donate-small:hover {
+    background: linear-gradient(135deg, #1e3a8a, #2e1065);
+    border-color: #c084fc;
+}
+
+/* ===== БЛОК ПРОЗРАЧНОСТИ ===== */
+.transparency {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 80px;
+    padding: 48px;
+    background: linear-gradient(135deg, rgba(0,204,255,0.05), rgba(139,92,246,0.05));
+    border-radius: 32px;
+    border: 1px solid rgba(79, 70, 229, 0.3);
+}
+
+.transparency-left {
+    flex: 1;
+}
+
+.transparency-left h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.transparency-left p {
+    color: #bdc6f0;
+    margin-bottom: 24px;
+}
+
+.check-list {
+    list-style: none;
+    margin-bottom: 28px;
+}
+
+.check-list li {
+    margin: 12px 0;
+}
+
+.check-list i {
+    color: #2dd4ff;
+    margin-right: 12px;
+}
+
+.transparency-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.report-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: rgba(10, 10, 31, 0.6);
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+/* Загрузка */
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #8892b0;
+}
+
+/* ===== АДАПТИВ HERO ===== */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .transparency {
+        padding: 28px;
+    }
+}

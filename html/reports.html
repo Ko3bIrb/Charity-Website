@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>AceHelp | Отчётность</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/reports.css">
+</head>
+<body>
+    <div class="container">
+        
+        <!-- ШАПКА -->
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <span>Ace<span style="color:#a855f7;">Help</span></span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Главная</a>
+                    <a href="campaigns.html">Сборы</a>
+                    <a href="reports.html" class="active-nav">Отчётность</a>
+                    <a href="about.html">О нас</a>
+                    <a href="contacts.html">Контакты</a>
+                    <button class="donate-btn" id="globalDonateBtn">
+                        <i class="fas fa-heart"></i> Пожертвовать
+                    </button>
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-counter">0</span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- ЗАГОЛОВОК -->
+        <section class="page-header">
+            <h1>Отчётность и прозрачность</h1>
+            <p>Мы открыто публикуем все отчёты о сборах и их использовании</p>
+        </section>
+
+        <!-- ОБЩАЯ СТАТИСТИКА -->
+        <section class="total-stats">
+            <div class="stat-card neon-border">
+                <i class="fas fa-users"></i>
+                <div class="stat-info">
+                    <span class="stat-value" id="totalHelpCount">2 847</span>
+                    <span class="stat-label">получили помощь</span>
+                </div>
+            </div>
+            <div class="stat-card neon-border">
+                <i class="fas fa-ruble-sign"></i>
+                <div class="stat-info">
+                    <span class="stat-value" id="totalRaised">2 847 500</span>
+                    <span class="stat-label">всего собрано ₽</span>
+                </div>
+            </div>
+            <div class="stat-card neon-border">
+                <i class="fas fa-check-circle"></i>
+                <div class="stat-info">
+                    <span class="stat-value" id="closedCampaigns">28</span>
+                    <span class="stat-label">закрытых сборов</span>
+                </div>
+            </div>
+            <div class="stat-card neon-border">
+                <i class="fas fa-chart-line"></i>
+                <div class="stat-info">
+                    <span class="stat-value" id="activeCampaigns">5</span>
+                    <span class="stat-label">активных сборов</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ФИНАНСОВЫЕ ОТЧЁТЫ -->
+        <section class="reports-section">
+            <h2>📑 Финансовые отчёты</h2>
+            <div class="reports-list" id="financialReports">
+                <!-- Загружаются из JS -->
+            </div>
+        </section>
+
+        <!-- ЗАКРЫТЫЕ СБОРЫ -->
+        <section class="completed-campaigns">
+            <h2>✅ Завершённые сборы</h2>
+            <div class="completed-list" id="completedCampaigns">
+                <!-- Загружаются из JS -->
+            </div>
+        </section>
+
+        <!-- ПАРТНЁРЫ И АУДИТ -->
+        <section class="audit-section">
+            <h2>🔍 Независимый аудит</h2>
+            <div class="audit-cards">
+                <div class="audit-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Заключение аудита 2025</h3>
+                    <p>Проверка финансовой деятельности за 2025 год</p>
+                    <button class="btn-outline-light">Скачать PDF</button>
+                </div>
+                <div class="audit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Сертификат надёжности</h3>
+                    <p>Платформа прошла добровольную сертификацию</p>
+                    <button class="btn-outline-light">Посмотреть</button>
+                </div>
+                <div class="audit-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Партнёрская проверка</h3>
+                    <p>Ежегодный отчёт партнёрской организации</p>
+                    <button class="btn-outline-light">Скачать PDF</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo" style="margin-bottom: 16px;">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <span>AceHelp</span>
+                    </div>
+                    <p>Помощь, которая доходит до адресата.</p>
+                    <div class="social-icons">
+                        <i class="fab fa-vk"></i>
+                        <i class="fab fa-telegram"></i>
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div>
+                    <h4>О проекте</h4>
+                    <a href="about.html">О нас</a>
+                    <a href="#">Команда</a>
+                    <a href="#">Вакансии</a>
+                </div>
+                <div>
+                    <h4>Помощь</h4>
+                    <a href="#">Как начать</a>
+                    <a href="#">Частые вопросы</a>
+                    <a href="contacts.html">Контакты</a>
+                </div>
+                <div>
+                    <h4>Юридическое</h4>
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Договор оферты</a>
+                    <a href="#">Реквизиты фонда</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 AceHelp — благотворительная платформа</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО ПОЖЕРТВОВАНИЯ -->
+    <div id="donationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>💫 Пожертвование</h3>
+            <p>Выберите сумму или введите свою</p>
+            <div class="amount-buttons">
+                <button class="amount-option" data-amount="500">500 ₽</button>
+                <button class="amount-option" data-amount="1000">1000 ₽</button>
+                <button class="amount-option" data-amount="2000">2000 ₽</button>
+                <button class="amount-option custom-amount-btn">Своя сумма</button>
+            </div>
+            <input type="number" id="customAmount" placeholder="Введите сумму" style="display:none;">
+            <button class="btn-primary" id="submitDonation" style="width:100%; margin-top:24px;">Продолжить →</button>
+            <small style="display:block; margin-top:16px;">💳 Защищённое соединение. Без комиссии.</small>
+        </div>
+    </div>
+
+<!-- МОДАЛЬНОЕ ОКНО ИСТОРИИ ПОЖЕРТВОВАНИЙ -->
+<div id="historyModal" class="modal">
+    <div class="modal-content history-modal">
+        <span class="close-modal">&times;</span>
+        <h3>📜 История пожертвований</h3>
+        <div id="historyList" class="history-list">
+            <!-- Сюда будет загружаться список -->
+        </div>
+        <div class="history-total">
+            <strong>Всего пожертвовано:</strong> <span id="historyTotalAmount">0 ₽</span>
+        </div>
+        <button id="clearHistoryBtn" class="btn-outline-light" style="margin-top: 16px;">Очистить историю</button>
+    </div>
+</div>
+    <script src="../js/common.js"></script>
+    <script src="../js/reports.js"></script>
+</body>
+</html>

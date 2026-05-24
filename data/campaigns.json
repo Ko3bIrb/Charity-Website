@@ -1,0 +1,83 @@
+{
+    "campaigns": [
+        {
+            "id": 1,
+            "name": "Помощь детям с ДЦП",
+            "category": "Дети",
+            "categoryEn": "children",
+            "target": 500000,
+            "raised": 324000,
+            "donorsCount": 127,
+            "daysLeft": 14,
+            "description": "Сбор средств на реабилитацию и лечение детей с детским церебральным параличом. В программе: массажи, ЛФК, занятия с логопедом, приобретение специализированного оборудования.",
+            "image": "../images/children.jpg",
+            "reports": [
+                { "title": "Закуплено оборудование для ЛФК", "date": "10.04.2026" },
+                { "title": "Начало курса реабилитации", "date": "25.03.2026" }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Спасём бездомных животных",
+            "category": "Животные",
+            "categoryEn": "animals",
+            "target": 300000,
+            "raised": 189000,
+            "donorsCount": 89,
+            "daysLeft": 7,
+            "description": "Корм, лечение и стерилизация бездомных животных в городских приютах. Поможем найти хозяев для 50 питомцев.",
+            "image": "../images/animals.jpg",
+            "reports": [
+                { "title": "Закуплен корм для приюта", "date": "05.04.2026" }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Лечение онкобольных",
+            "category": "Медицина",
+            "categoryEn": "medicine",
+            "target": 1200000,
+            "raised": 758000,
+            "donorsCount": 234,
+            "daysLeft": 21,
+            "description": "Помощь в оплате дорогостоящего лечения пациентов с онкологическими заболеваниями. Химиотерапия, лекарства, реабилитация.",
+            "image": "../images/medicine.jpg",
+            "reports": [
+                { "title": "Оплачена первая химиотерапия", "date": "12.04.2026" }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Сохраним леса",
+            "category": "Экология",
+            "categoryEn": "ecology",
+            "target": 250000,
+            "raised": 45000,
+            "donorsCount": 34,
+            "daysLeft": 45,
+            "description": "Посадка деревьев и очистка лесных массивов от мусора после пожаров.",
+            "image": "../images/ecology.jpg",
+            "reports": []
+        },
+        {
+            "id": 5,
+            "name": "Помощь пожилым",
+            "category": "Пожилые",
+            "categoryEn": "elderly",
+            "target": 400000,
+            "raised": 120000,
+            "donorsCount": 67,
+            "daysLeft": 18,
+            "description": "Продукты, лекарства и уход за одинокими пожилыми людьми. Тёплая забота и внимание тем, кто в этом нуждается.",
+            "image": "../images/elderly.jpg",
+            "reports": []
+        }
+    ],
+    "stats": {
+        "totalRaised": 2847500,
+        "totalHelpCount": 2847,
+        "closedCampaigns": 28,
+        "activeCampaigns": 5,
+        "activeDonors": 1247
+    }
+}

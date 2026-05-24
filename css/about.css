@@ -1,0 +1,247 @@
+/* ===== СТРАНИЦА "О НАС" ===== */
+
+.about-hero {
+    text-align: center;
+    padding: 60px 0 40px;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #ffffff, #b6b9ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.about-hero p {
+    color: #8892b0;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* МИССИЯ */
+.mission-section {
+    margin: 60px 0;
+}
+
+.mission-card {
+    background: linear-gradient(135deg, rgba(0,204,255,0.1), rgba(139,92,246,0.1));
+    border-radius: 32px;
+    padding: 48px;
+    text-align: center;
+    border: 1px solid rgba(79, 70, 229, 0.3);
+    margin-bottom: 48px;
+}
+
+.mission-card i {
+    font-size: 3rem;
+    color: #2dd4ff;
+    margin-bottom: 20px;
+}
+
+.mission-card h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.mission-card p {
+    color: #bdc6f0;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ЦЕННОСТИ */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px;
+}
+
+.value-item {
+    background: rgba(15, 20, 45, 0.4);
+    border-radius: 24px;
+    padding: 32px 24px;
+    text-align: center;
+    border: 1px solid rgba(79, 70, 229, 0.2);
+    transition: 0.3s;
+}
+
+.value-item:hover {
+    border-color: #c084fc;
+    transform: translateY(-5px);
+}
+
+.value-item i {
+    font-size: 2.5rem;
+    color: #2dd4ff;
+    margin-bottom: 16px;
+}
+
+.value-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.value-item p {
+    color: #8892b0;
+    font-size: 0.9rem;
+}
+
+/* ИСТОРИЯ */
+.history-section {
+    margin: 60px 0;
+}
+
+.history-content h2 {
+    font-size: 2rem;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.timeline {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    padding: 20px;
+    background: rgba(15, 20, 45, 0.3);
+    border-radius: 20px;
+}
+
+.timeline-year {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #2dd4ff;
+    min-width: 80px;
+}
+
+.timeline-text {
+    color: #bdc6f0;
+    line-height: 1.5;
+}
+
+/* КОМАНДА */
+.team-section {
+    margin: 60px 0;
+}
+
+.team-section h2 {
+    font-size: 2rem;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 28px;
+}
+
+.team-card {
+    background: rgba(15, 20, 45, 0.4);
+    border-radius: 24px;
+    padding: 28px;
+    text-align: center;
+    border: 1px solid rgba(79, 70, 229, 0.2);
+    transition: 0.3s;
+}
+
+.team-card:hover {
+    border-color: #c084fc;
+}
+
+.team-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+    border: 2px solid #2dd4ff;
+}
+
+.team-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.team-role {
+    color: #8892b0;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+
+.team-desc {
+    color: #bdc6f0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* СТАТИСТИКА */
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 28px;
+    margin: 60px 0;
+    text-align: center;
+}
+
+.stat-block {
+    background: linear-gradient(135deg, rgba(0,204,255,0.05), rgba(139,92,246,0.05));
+    border-radius: 24px;
+    padding: 32px 20px;
+}
+
+.stat-block .stat-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #a5f3ff;
+    display: block;
+}
+
+.stat-block .stat-label {
+    font-size: 0.9rem;
+    color: #8892b0;
+}
+
+/* АДАПТИВ */
+@media (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .mission-card {
+        padding: 28px;
+    }
+    
+    .mission-card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .timeline-year {
+        min-width: auto;
+    }
+    
+    .stats-section {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+}

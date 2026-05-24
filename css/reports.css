@@ -1,0 +1,201 @@
+/* ===== СТРАНИЦА ОТЧЁТНОСТИ ===== */
+
+.page-header {
+    text-align: center;
+    padding: 40px 0 20px;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #ffffff, #b6b9ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.page-header p {
+    color: #8892b0;
+}
+
+/* ОБЩАЯ СТАТИСТИКА */
+.total-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin: 40px 0;
+}
+
+.stat-card {
+    background: rgba(15, 20, 45, 0.6);
+    backdrop-filter: blur(8px);
+    border-radius: 24px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: 0.3s;
+}
+
+.stat-card i {
+    font-size: 2.5rem;
+    color: #2dd4ff;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #a5f3ff;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #8892b0;
+}
+
+/* ОТЧЁТЫ */
+.reports-section, .completed-campaigns, .audit-section {
+    margin: 60px 0;
+}
+
+.reports-section h2, .completed-campaigns h2, .audit-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 28px;
+    color: #eef5ff;
+}
+
+.reports-list, .completed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.report-item, .completed-item {
+    background: rgba(15, 20, 45, 0.4);
+    border-radius: 16px;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    transition: 0.2s;
+    border: 1px solid rgba(79, 70, 229, 0.2);
+}
+
+.report-item:hover, .completed-item:hover {
+    border-color: #c084fc;
+    background: rgba(15, 20, 45, 0.6);
+}
+
+.report-info, .completed-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.report-title, .completed-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.report-date, .completed-date {
+    font-size: 0.8rem;
+    color: #8892b0;
+}
+
+.report-amount, .completed-raised {
+    font-size: 1rem;
+    color: #a5f3ff;
+    font-weight: 600;
+}
+
+.download-btn, .detail-btn {
+    background: rgba(0, 204, 255, 0.1);
+    border: 1px solid #4f46e5;
+    padding: 8px 20px;
+    border-radius: 40px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.download-btn:hover, .detail-btn:hover {
+    border-color: #c084fc;
+    background: rgba(192, 132, 252, 0.1);
+}
+
+/* АУДИТ */
+.audit-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    margin-top: 24px;
+}
+
+.audit-card {
+    background: rgba(15, 20, 45, 0.4);
+    border-radius: 24px;
+    padding: 28px;
+    text-align: center;
+    border: 1px solid rgba(79, 70, 229, 0.2);
+    transition: 0.3s;
+}
+
+.audit-card:hover {
+    border-color: #c084fc;
+    transform: translateY(-5px);
+}
+
+.audit-card i {
+    font-size: 2.5rem;
+    color: #2dd4ff;
+    margin-bottom: 16px;
+}
+
+.audit-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.audit-card p {
+    color: #8892b0;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+/* АДАПТИВ */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .total-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+    
+    .stat-card {
+        padding: 16px;
+    }
+    
+    .stat-value {
+        font-size: 1.3rem;
+    }
+    
+    .report-item, .completed-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .total-stats {
+        grid-template-columns: 1fr;
+    }
+}

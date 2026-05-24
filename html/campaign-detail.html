@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>AceHelp | Детали сбора</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/campaign-detail.css">
+</head>
+<body>
+    <div class="container">
+        
+        <!-- ШАПКА -->
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <span>Ace<span style="color:#a855f7;">Help</span></span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Главная</a>
+                    <a href="campaigns.html">Сборы</a>
+                    <a href="reports.html">Отчётность</a>
+                    <a href="about.html">О нас</a>
+                    <a href="contacts.html">Контакты</a>
+                    <button class="donate-btn" id="globalDonateBtn">
+                        <i class="fas fa-heart"></i> Пожертвовать
+                    </button>
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-counter">0</span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- ХЛЕБНЫЕ КРОШКИ -->
+        <div class="breadcrumbs">
+            <a href="index.html">Главная</a> / 
+            <a href="campaigns.html">Сборы</a> / 
+            <span id="breadcrumbCampaignName">Детали сбора</span>
+        </div>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <div class="detail-wrapper" id="campaignDetail">
+            <div class="loading-detail">Загрузка...</div>
+        </div>
+
+        <!-- ПОХОЖИЕ СБОРЫ -->
+        <section class="related-campaigns">
+            <h2>🔥 Похожие сборы</h2>
+            <div class="related-grid" id="relatedGrid">
+                <!-- Загружается из JS -->
+            </div>
+        </section>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo" style="margin-bottom: 16px;">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <span>AceHelp</span>
+                    </div>
+                    <p>Помощь, которая доходит до адресата.</p>
+                    <div class="social-icons">
+                        <i class="fab fa-vk"></i>
+                        <i class="fab fa-telegram"></i>
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div>
+                    <h4>О проекте</h4>
+                    <a href="about.html">О нас</a>
+                    <a href="#">Команда</a>
+                    <a href="#">Вакансии</a>
+                </div>
+                <div>
+                    <h4>Помощь</h4>
+                    <a href="#">Как начать</a>
+                    <a href="#">Частые вопросы</a>
+                    <a href="contacts.html">Контакты</a>
+                </div>
+                <div>
+                    <h4>Юридическое</h4>
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Договор оферты</a>
+                    <a href="#">Реквизиты фонда</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 AceHelp — благотворительная платформа</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО ПОЖЕРТВОВАНИЯ -->
+    <div id="donationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>💫 Пожертвование</h3>
+            <p>Выберите сумму или введите свою</p>
+            <div class="amount-buttons">
+                <button class="amount-option" data-amount="500">500 ₽</button>
+                <button class="amount-option" data-amount="1000">1000 ₽</button>
+                <button class="amount-option" data-amount="2000">2000 ₽</button>
+                <button class="amount-option" data-amount="5000">5000 ₽</button>
+                <button class="amount-option custom-amount-btn">Своя сумма</button>
+            </div>
+            <input type="number" id="customAmount" placeholder="Введите сумму" style="display:none;">
+            <button class="btn-primary" id="submitDonation" style="width:100%; margin-top:24px;">Продолжить →</button>
+            <small style="display:block; margin-top:16px;">💳 Защищённое соединение. Без комиссии.</small>
+        </div>
+    </div>
+
+<!-- МОДАЛЬНОЕ ОКНО ИСТОРИИ ПОЖЕРТВОВАНИЙ -->
+<div id="historyModal" class="modal">
+    <div class="modal-content history-modal">
+        <span class="close-modal">&times;</span>
+        <h3>📜 История пожертвований</h3>
+        <div id="historyList" class="history-list">
+            <!-- Сюда будет загружаться список -->
+        </div>
+        <div class="history-total">
+            <strong>Всего пожертвовано:</strong> <span id="historyTotalAmount">0 ₽</span>
+        </div>
+        <button id="clearHistoryBtn" class="btn-outline-light" style="margin-top: 16px;">Очистить историю</button>
+    </div>
+</div>
+    <script src="../js/common.js"></script>
+    <script src="../js/campaign-detail.js"></script>
+</body>
+</html>

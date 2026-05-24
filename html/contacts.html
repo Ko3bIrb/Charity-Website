@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>AceHelp | Контакты</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/contacts.css">
+</head>
+<body>
+    <div class="container">
+        
+        <!-- ШАПКА -->
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <span>Ace<span style="color:#a855f7;">Help</span></span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Главная</a>
+                    <a href="campaigns.html">Сборы</a>
+                    <a href="reports.html">Отчётность</a>
+                    <a href="about.html">О нас</a>
+                    <a href="contacts.html" class="active-nav">Контакты</a>
+                    <button class="donate-btn" id="globalDonateBtn">
+                        <i class="fas fa-heart"></i> Пожертвовать
+                    </button>
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-counter">0</span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- ЗАГОЛОВОК -->
+        <section class="page-header">
+            <h1>📞 Свяжитесь с нами</h1>
+            <p>Мы всегда рады ответить на ваши вопросы</p>
+        </section>
+
+        <!-- КОНТАКТНАЯ ИНФОРМАЦИЯ + ФОРМА -->
+        <section class="contacts-wrapper">
+            <div class="contacts-info">
+                <h2>Наши контакты</h2>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Адрес</h4>
+                        <p>г. Москва, ул. Тверская, д. 15</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Телефон</h4>
+                        <p>+7 (495) 123-45-67</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>hello@acehelp.ru</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Режим работы</h4>
+                        <p>Пн-Пт: 10:00 – 19:00</p>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <h4>Мы в соцсетях</h4>
+                    <div class="social-icons">
+                        <i class="fab fa-vk"></i>
+                        <i class="fab fa-telegram"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Напишите нам</h2>
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="name">Ваше имя *</label>
+                        <input type="text" id="name" name="name" placeholder="Иван Иванов">
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="ivan@example.ru">
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+7 (999) 123-45-67">
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Тема *</label>
+                        <select id="subject" name="subject">
+                            <option value="">Выберите тему</option>
+                            <option value="question">Вопрос о сборах</option>
+                            <option value="donation">Вопрос о пожертвовании</option>
+                            <option value="cooperation">Сотрудничество</option>
+                            <option value="other">Другое</option>
+                        </select>
+                        <span class="error-message" id="subjectError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Сообщение *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Напишите ваш вопрос..."></textarea>
+                        <span class="error-message" id="messageError"></span>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="agreement">
+                        <label for="agreement">Я согласен на обработку персональных данных *</label>
+                        <span class="error-message" id="agreementError"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary" id="submitFormBtn">Отправить сообщение →</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- КАРТА -->
+        <section class="map-section">
+            <h2>Как нас найти</h2>
+            <div class="map-placeholder">
+                <i class="fas fa-map"></i>
+                <p>📍 г. Москва, ул. Тверская, д. 15</p>
+                <small>Интерактивная карта будет доступна в полной версии</small>
+            </div>
+        </section>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo" style="margin-bottom: 16px;">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <span>AceHelp</span>
+                    </div>
+                    <p>Помощь, которая доходит до адресата.</p>
+                    <div class="social-icons">
+                        <i class="fab fa-vk"></i>
+                        <i class="fab fa-telegram"></i>
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div>
+                    <h4>О проекте</h4>
+                    <a href="about.html">О нас</a>
+                    <a href="#">Команда</a>
+                    <a href="#">Вакансии</a>
+                </div>
+                <div>
+                    <h4>Помощь</h4>
+                    <a href="#">Как начать</a>
+                    <a href="#">Частые вопросы</a>
+                    <a href="contacts.html">Контакты</a>
+                </div>
+                <div>
+                    <h4>Юридическое</h4>
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Договор оферты</a>
+                    <a href="#">Реквизиты фонда</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 AceHelp — благотворительная платформа</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО ПОЖЕРТВОВАНИЯ -->
+    <div id="donationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>💫 Пожертвование</h3>
+            <p>Выберите сумму или введите свою</p>
+            <div class="amount-buttons">
+                <button class="amount-option" data-amount="500">500 ₽</button>
+                <button class="amount-option" data-amount="1000">1000 ₽</button>
+                <button class="amount-option" data-amount="2000">2000 ₽</button>
+                <button class="amount-option custom-amount-btn">Своя сумма</button>
+            </div>
+            <input type="number" id="customAmount" placeholder="Введите сумму" style="display:none;">
+            <button class="btn-primary" id="submitDonation" style="width:100%; margin-top:24px;">Продолжить →</button>
+            <small style="display:block; margin-top:16px;">💳 Защищённое соединение. Без комиссии.</small>
+        </div>
+    </div>
+
+<!-- МОДАЛЬНОЕ ОКНО ИСТОРИИ ПОЖЕРТВОВАНИЙ -->
+<div id="historyModal" class="modal">
+    <div class="modal-content history-modal">
+        <span class="close-modal">&times;</span>
+        <h3>📜 История пожертвований</h3>
+        <div id="historyList" class="history-list">
+            <!-- Сюда будет загружаться список -->
+        </div>
+        <div class="history-total">
+            <strong>Всего пожертвовано:</strong> <span id="historyTotalAmount">0 ₽</span>
+        </div>
+        <button id="clearHistoryBtn" class="btn-outline-light" style="margin-top: 16px;">Очистить историю</button>
+    </div>
+</div>
+    <script src="../js/common.js"></script>
+    <script src="../js/contacts.js"></script>
+</body>
+</html>

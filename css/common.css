@@ -1,0 +1,393 @@
+/* ===== ОБНУЛЕНИЕ И БАЗА ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at 10% 20%, #0a0a1f, #02020c);
+    font-family: 'Inter', sans-serif;
+    color: #eef5ff;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ===== НЕОНОВЫЕ ЭФФЕКТЫ ===== */
+.neon-text {
+    text-shadow: 0 0 5px #00ccff, 0 0 12px #3a0ca3, 0 0 20px #5200ff;
+}
+
+.neon-border {
+    box-shadow: 0 8px 20px rgba(0, 204, 255, 0.2), 0 0 0 1px rgba(0, 204, 255, 0.3);
+    transition: all 0.25s ease;
+}
+
+.neon-border:hover {
+    box-shadow: 0 12px 28px rgba(120, 0, 255, 0.35), 0 0 0 1px #c084fc;
+}
+
+/* ===== ШАПКА ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-bottom: 1px solid rgba(0, 204, 255, 0.25);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.logo i {
+    font-size: 2rem;
+    color: #2dd4ff;
+    filter: drop-shadow(0 0 6px #a855f7);
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #d9e2f5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: #b6a0ff;
+    text-shadow: 0 0 3px #8b5cf6;
+}
+
+/* Кнопка в шапке */
+.donate-btn {
+    background: linear-gradient(135deg, #0a2b5c, #1e1a4b);
+    border: 1px solid #4f46e5;
+    padding: 8px 20px;
+    border-radius: 60px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.donate-btn:hover {
+    background: linear-gradient(135deg, #1e3a8a, #2e1065);
+    border-color: #c084fc;
+    box-shadow: 0 0 10px #7c3aed;
+}
+
+/* Иконка корзины/пожертвований */
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+.cart-counter {
+    position: absolute;
+    top: -10px;
+    right: -12px;
+    background: #a855f7;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    display: none;
+}
+
+/* ===== КНОПКИ ===== */
+.btn-primary {
+    background: linear-gradient(95deg, #1e2a6e, #5b21b6);
+    border: none;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 0 10px #3b82f6;
+}
+
+.btn-primary:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px #a855f7;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid #8b5cf6;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-weight: 600;
+    color: #d8b4fe;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-secondary:hover {
+    background: rgba(139, 92, 246, 0.15);
+    border-color: #c084fc;
+}
+
+.btn-outline-light {
+    background: transparent;
+    border: 1px solid #c084fc;
+    padding: 10px 24px;
+    border-radius: 40px;
+    color: #c084fc;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-outline-light:hover {
+    background: rgba(192, 132, 252, 0.1);
+}
+
+/* ===== ПОДВАЛ ===== */
+.footer {
+    margin-top: 80px;
+    padding: 48px 0 24px;
+    border-top: 1px solid rgba(0, 204, 255, 0.2);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-grid a {
+    display: block;
+    color: #8892b0;
+    text-decoration: none;
+    margin: 8px 0;
+    transition: 0.2s;
+}
+
+.footer-grid a:hover {
+    color: #c084fc;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.social-icons i {
+    font-size: 1.5rem;
+    color: #8892b0;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.social-icons i:hover {
+    color: #c084fc;
+    text-shadow: 0 0 5px #a855f7;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 24px;
+    border-top: 1px solid rgba(0, 204, 255, 0.1);
+    color: #5a6680;
+    font-size: 0.85rem;
+}
+
+/* ===== МОДАЛЬНОЕ ОКНО ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #0f0f23;
+    border: 1px solid #4f46e5;
+    border-radius: 24px;
+    padding: 32px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 0 40px rgba(79, 70, 229, 0.3);
+}
+
+.close-modal {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #8892b0;
+}
+
+.close-modal:hover {
+    color: #c084fc;
+}
+
+.amount-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.amount-option {
+    background: rgba(0, 204, 255, 0.1);
+    border: 1px solid #2dd4ff;
+    padding: 10px 20px;
+    border-radius: 40px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.amount-option:hover, .amount-option.active {
+    background: #2dd4ff;
+    color: #0a0a1f;
+}
+
+#customAmount {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid #4f46e5;
+    color: white;
+    font-size: 1rem;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav-links {
+        justify-content: center;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ИСТОРИЯ ПОЖЕРТВОВАНИЙ */
+.history-modal {
+    max-width: 600px;
+}
+
+.history-list {
+    max-height: 400px;
+    overflow-y: auto;
+    margin: 20px 0;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid rgba(79, 70, 229, 0.2);
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.history-item-info {
+    flex: 1;
+}
+
+.history-item-name {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.history-item-date {
+    font-size: 0.7rem;
+    color: #8892b0;
+}
+
+.history-item-amount {
+    color: #a5f3ff;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.history-item-remove {
+    background: none;
+    border: none;
+    color: #ff4444;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0 8px;
+    opacity: 0.6;
+    transition: 0.2s;
+}
+
+.history-item-remove:hover {
+    opacity: 1;
+}
+
+.history-empty {
+    text-align: center;
+    padding: 40px;
+    color: #8892b0;
+}
+
+.history-total {
+    text-align: right;
+    padding-top: 16px;
+    border-top: 1px solid rgba(79, 70, 229, 0.3);
+    font-size: 1.1rem;
+}
+
+#clearHistoryBtn {
+    width: 100%;
+}
