@@ -108,25 +108,32 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        previewGrid.innerHTML = campaignsData.map(campaign => `
-            <div class="campaign-card" data-id="${campaign.id}">
-                <img src="${campaign.image}" alt="${campaign.name}" class="campaign-image" onerror="this.src='https://placehold.co/400x200/1e1a4b/white?text=AceHelp'">
-                <div class="campaign-info">
-                    <span class="campaign-category">${campaign.category}</span>
-                    <h3 class="campaign-title">${campaign.name}</h3>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: ${getProgressPercent(campaign.raised, campaign.target)}%"></div>
+        previewGrid.innerHTML = campaignsData.map(campaign => {
+            let imagePath = campaign.image;
+            if (imagePath && imagePath.startsWith('../')) {
+                imagePath = imagePath.replace('../', '');
+            }
+            
+            return `
+                <div class="campaign-card" data-id="${campaign.id}">
+                    <img src="${imagePath}" alt="${campaign.name}" class="campaign-image" onerror="this.src='https://placehold.co/400x200/1e1a4b/white?text=Помощь'">
+                    <div class="campaign-info">
+                        <span class="campaign-category">${campaign.category}</span>
+                        <h3 class="campaign-title">${campaign.name}</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${getProgressPercent(campaign.raised, campaign.target)}%"></div>
+                        </div>
+                        <div class="campaign-stats">
+                            <span class="campaign-raised">Собрано: ${formatMoney(campaign.raised)}</span>
+                            <span class="campaign-target">Нужно: ${formatMoney(campaign.target)}</span>
+                        </div>
+                        <button class="donate-small" data-id="${campaign.id}" data-name="${campaign.name}">
+                            💙 Помочь
+                        </button>
                     </div>
-                    <div class="campaign-stats">
-                        <span class="campaign-raised">Собрано: ${formatMoney(campaign.raised)}</span>
-                        <span class="campaign-target">Нужно: ${formatMoney(campaign.target)}</span>
-                    </div>
-                    <button class="donate-small" data-id="${campaign.id}" data-name="${campaign.name}">
-                        💙 Помочь
-                    </button>
                 </div>
-            </div>
-        `).join('');
+            `;
+        }).join('');
 
         document.querySelectorAll('.donate-small').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -140,8 +147,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.campaign-card').forEach(card => {
             card.addEventListener('click', (e) => {
                 if (e.target.classList.contains('donate-small')) return;
+                if (e.target.closest('.donate-small')) return;
+                
                 const id = card.dataset.id;
-                window.location.href = `campaign-detail.html?id=${id}`;
+                if (id) {
+                    window.location.href = `html/campaign-detail.html?id=${id}`;
+                }
             });
         });
     }
@@ -170,94 +181,79 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cart.updateCounter();
 
-    // ===== ИСТОРИЯ ПОЖЕРТВОВАНИЙ ПО КЛИКУ НА КОРЗИНУ =====
-const cartIcon = document.querySelector('.cart-icon');
-const historyModal = new Modal('historyModal');
+    // ===== ИСТОРИЯ ПОЖЕРТВОВАНИЙ =====
+    const cartIcon = document.querySelector('.cart-icon');
+    const historyModal = new Modal('historyModal');
 
-function renderHistory() {
-    const historyList = document.getElementById('historyList');
-    const historyTotalSpan = document.getElementById('historyTotalAmount');
+    function renderHistory() {
+        const historyList = document.getElementById('historyList');
+        const historyTotalSpan = document.getElementById('historyTotalAmount');
 
-    if (!historyList) return;
+        if (!historyList) return;
 
-    const history = cart.getHistory();
+        const history = cart.getHistory();
 
-    if (history.length === 0) {
-        historyList.innerHTML = `
-            <div class="history-empty">
-                <i class="fas fa-shopping-cart" style="font-size: 2rem; margin-bottom: 12px;"></i>
-                <p>История пожертвований пуста</p>
-                <p style="font-size: 0.8rem;">Пожертвуйте на любой сбор, и он появится здесь</p>
+        if (history.length === 0) {
+            historyList.innerHTML = `
+                <div class="history-empty">
+                    <i class="fas fa-shopping-cart" style="font-size: 2rem; margin-bottom: 12px;"></i>
+                    <p>История пожертвований пуста</p>
+                    <p style="font-size: 0.8rem;">Пожертвуйте на любой сбор, и он появится здесь</p>
+                </div>
+            `;
+            if (historyTotalSpan) historyTotalSpan.textContent = formatMoney(0);
+            return;
+        }
+
+        const sortedHistory = [...history].reverse();
+
+        historyList.innerHTML = sortedHistory.map(item => `
+            <div class="history-item" data-id="${item.campaignId}">
+                <div class="history-item-info">
+                    <div class="history-item-name">${item.campaignName}</div>
+                    <div class="history-item-date">${new Date(item.date).toLocaleDateString('ru-RU')}</div>
+                </div>
+                <div class="history-item-amount">${formatMoney(item.amount)}</div>
+                <button class="history-item-remove" data-id="${item.campaignId}" data-name="${item.campaignName}">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
             </div>
-        `;
-        if (historyTotalSpan) historyTotalSpan.textContent = formatMoney(0);
-        return;
+        `).join('');
+
+        const totalAmount = cart.getTotalAmount();
+        if (historyTotalSpan) historyTotalSpan.textContent = formatMoney(totalAmount);
+
+        document.querySelectorAll('.history-item-remove').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const id = parseInt(btn.dataset.id);
+                const name = btn.dataset.name;
+                if (confirm(`Удалить пожертвование для "${name}"? Сумма сбора не восстановится.`)) {
+                    cart.removeItem(id);
+                    renderHistory();
+                    location.reload();
+                }
+            });
+        });
     }
 
-    // Сортируем от новых к старым
-    const sortedHistory = [...history].reverse();
+    if (cartIcon) {
+        cartIcon.addEventListener('click', () => {
+            renderHistory();
+            historyModal.open();
+        });
+    }
 
-    historyList.innerHTML = sortedHistory.map(item => `
-        <div class="history-item" data-id="${item.campaignId}">
-            <div class="history-item-info">
-                <div class="history-item-name">${item.campaignName}</div>
-                <div class="history-item-date">${new Date(item.date).toLocaleDateString('ru-RU')}</div>
-            </div>
-            <div class="history-item-amount">${formatMoney(item.amount)}</div>
-            <button class="history-item-remove" data-id="${item.campaignId}" data-name="${item.campaignName}">
-                <i class="fas fa-trash-alt"></i>
-            </button>
-        </div>
-    `).join('');
-
-    // Общая сумма
-    const totalAmount = cart.getTotalAmount();
-    if (historyTotalSpan) historyTotalSpan.textContent = formatMoney(totalAmount);
-
-    // Обработчики удаления
-    document.querySelectorAll('.history-item-remove').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const id = parseInt(btn.dataset.id);
-            const name = btn.dataset.name;
-            if (confirm(`Удалить пожертвование для "${name}"? Сумма сбора не восстановится.`)) {
-                cart.removeItem(id);
+    const clearHistoryBtn = document.getElementById('clearHistoryBtn');
+    if (clearHistoryBtn) {
+        clearHistoryBtn.addEventListener('click', () => {
+            if (confirm('Очистить всю историю пожертвований? Суммы сборов не восстановятся.')) {
+                cart.clear();
                 renderHistory();
-                // Обновляем страницу, если нужно
-                if (typeof applyFiltersAndRender === 'function') {
-                    applyFiltersAndRender();
-                }
-                if (typeof renderPreviewCampaigns === 'function') {
-                    location.reload(); // проще перезагрузить для обновления сумм
-                }
+                location.reload();
             }
         });
-    });
-}
+    }
 
-if (cartIcon) {
-    cartIcon.addEventListener('click', () => {
-        renderHistory();
-        historyModal.open();
-    });
-}
-
-// Глобальная очистка истории
-const clearHistoryBtn = document.getElementById('clearHistoryBtn');
-if (clearHistoryBtn) {
-    clearHistoryBtn.addEventListener('click', () => {
-        if (confirm('Очистить всю историю пожертвований? Суммы сборов не восстановятся.')) {
-            cart.clear();
-            renderHistory();
-            if (typeof applyFiltersAndRender === 'function') {
-                location.reload();
-            }
-            if (typeof renderPreviewCampaigns === 'function') {
-                location.reload();
-            }
-        }
-    });
-}
-
-    console.log('AceHelp: Главная страница загружена');
+    console.log('Главная страница загружена');
 });

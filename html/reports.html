@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>AceHelp | Отчётность</title>
+    <title>Отчётность</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -14,15 +14,14 @@
 <body>
     <div class="container">
         
-        <!-- ШАПКА -->
         <header>
             <nav class="navbar">
                 <div class="logo">
                     <i class="fas fa-hand-holding-heart"></i>
-                    <span>Ace<span style="color:#a855f7;">Help</span></span>
+                    <span style="color:#a855f7;">Помогаем</span>
                 </div>
                 <div class="nav-links">
-                    <a href="index.html">Главная</a>
+                    <a href="../index.html">Главная</a>
                     <a href="campaigns.html">Сборы</a>
                     <a href="reports.html" class="active-nav">Отчётность</a>
                     <a href="about.html">О нас</a>
@@ -38,13 +37,11 @@
             </nav>
         </header>
 
-        <!-- ЗАГОЛОВОК -->
         <section class="page-header">
             <h1>Отчётность и прозрачность</h1>
             <p>Мы открыто публикуем все отчёты о сборах и их использовании</p>
         </section>
 
-        <!-- ОБЩАЯ СТАТИСТИКА -->
         <section class="total-stats">
             <div class="stat-card neon-border">
                 <i class="fas fa-users"></i>
@@ -76,23 +73,16 @@
             </div>
         </section>
 
-        <!-- ФИНАНСОВЫЕ ОТЧЁТЫ -->
         <section class="reports-section">
             <h2>📑 Финансовые отчёты</h2>
-            <div class="reports-list" id="financialReports">
-                <!-- Загружаются из JS -->
-            </div>
+            <div class="reports-list" id="financialReports"></div>
         </section>
 
-        <!-- ЗАКРЫТЫЕ СБОРЫ -->
         <section class="completed-campaigns">
             <h2>✅ Завершённые сборы</h2>
-            <div class="completed-list" id="completedCampaigns">
-                <!-- Загружаются из JS -->
-            </div>
+            <div class="completed-list" id="completedCampaigns"></div>
         </section>
 
-        <!-- ПАРТНЁРЫ И АУДИТ -->
         <section class="audit-section">
             <h2>🔍 Независимый аудит</h2>
             <div class="audit-cards">
@@ -117,13 +107,12 @@
             </div>
         </section>
 
-        <!-- ПОДВАЛ -->
         <footer class="footer">
             <div class="footer-grid">
                 <div>
                     <div class="logo" style="margin-bottom: 16px;">
                         <i class="fas fa-hand-holding-heart"></i>
-                        <span>AceHelp</span>
+                        <span style="color:#a855f7;">Помогаем</span>
                     </div>
                     <p>Помощь, которая доходит до адресата.</p>
                     <div class="social-icons">
@@ -152,12 +141,11 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 AceHelp — благотворительная платформа</p>
+                <p>© 2026 Благотворительная платформа</p>
             </div>
         </footer>
     </div>
 
-    <!-- МОДАЛЬНОЕ ОКНО ПОЖЕРТВОВАНИЯ -->
     <div id="donationModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -175,20 +163,18 @@
         </div>
     </div>
 
-<!-- МОДАЛЬНОЕ ОКНО ИСТОРИИ ПОЖЕРТВОВАНИЙ -->
-<div id="historyModal" class="modal">
-    <div class="modal-content history-modal">
-        <span class="close-modal">&times;</span>
-        <h3>📜 История пожертвований</h3>
-        <div id="historyList" class="history-list">
-            <!-- Сюда будет загружаться список -->
+    <div id="historyModal" class="modal">
+        <div class="modal-content history-modal">
+            <span class="close-modal">&times;</span>
+            <h3>📜 История пожертвований</h3>
+            <div id="historyList" class="history-list"></div>
+            <div class="history-total">
+                <strong>Всего пожертвовано:</strong> <span id="historyTotalAmount">0 ₽</span>
+            </div>
+            <button id="clearHistoryBtn" class="btn-outline-light" style="margin-top: 16px;">Очистить историю</button>
         </div>
-        <div class="history-total">
-            <strong>Всего пожертвовано:</strong> <span id="historyTotalAmount">0 ₽</span>
-        </div>
-        <button id="clearHistoryBtn" class="btn-outline-light" style="margin-top: 16px;">Очистить историю</button>
     </div>
-</div>
+
     <script src="../js/common.js"></script>
     <script src="../js/reports.js"></script>
 </body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>AceHelp | О нас</title>
+    <title>О нас</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -14,15 +14,14 @@
 <body>
     <div class="container">
         
-        <!-- ШАПКА -->
         <header>
             <nav class="navbar">
                 <div class="logo">
                     <i class="fas fa-hand-holding-heart"></i>
-                    <span>Ace<span style="color:#a855f7;">Help</span></span>
+                    <span style="color:#a855f7;">Помогаем</span>
                 </div>
                 <div class="nav-links">
-                    <a href="index.html">Главная</a>
+                    <a href="../index.html">Главная</a>
                     <a href="campaigns.html">Сборы</a>
                     <a href="reports.html">Отчётность</a>
                     <a href="about.html" class="active-nav">О нас</a>
@@ -38,13 +37,11 @@
             </nav>
         </header>
 
-        <!-- ГЕРОЙ БЛОК -->
         <section class="about-hero">
-            <h1>О платформе <span class="neon-text">AceHelp</span></h1>
+            <h1>О платформе <span class="neon-text">Помогаем</span></h1>
             <p>Мы создаём будущее, где помощь становится простой, прозрачной и доступной каждому</p>
         </section>
 
-        <!-- МИССИЯ И ЦЕННОСТИ -->
         <section class="mission-section">
             <div class="mission-card">
                 <i class="fas fa-bullseye"></i>
@@ -75,14 +72,13 @@
             </div>
         </section>
 
-        <!-- НАША ИСТОРИЯ -->
         <section class="history-section">
             <div class="history-content">
                 <h2>📖 Наша история</h2>
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-year">2024</div>
-                        <div class="timeline-text">Основание платформы AceHelp. Первые 10 сборов и 50 жертвователей.</div>
+                        <div class="timeline-text">Основание платформы. Первые 10 сборов и 50 жертвователей.</div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-year">2025</div>
@@ -96,15 +92,11 @@
             </div>
         </section>
 
-        <!-- КОМАНДА -->
         <section class="team-section">
             <h2>👥 Наша команда</h2>
-            <div class="team-grid" id="teamGrid">
-                <!-- Загружается из JS -->
-            </div>
+            <div class="team-grid" id="teamGrid"></div>
         </section>
 
-        <!-- СТАТИСТИКА -->
         <section class="stats-section">
             <div class="stat-block">
                 <span class="stat-number" id="statPeople">2 847</span>
@@ -124,13 +116,12 @@
             </div>
         </section>
 
-        <!-- ПОДВАЛ -->
         <footer class="footer">
             <div class="footer-grid">
                 <div>
                     <div class="logo" style="margin-bottom: 16px;">
                         <i class="fas fa-hand-holding-heart"></i>
-                        <span>AceHelp</span>
+                        <span style="color:#a855f7;">Помогаем</span>
                     </div>
                     <p>Помощь, которая доходит до адресата.</p>
                     <div class="social-icons">
@@ -159,12 +150,11 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 AceHelp — благотворительная платформа</p>
+                <p>© 2026 Благотворительная платформа</p>
             </div>
         </footer>
     </div>
 
-    <!-- МОДАЛЬНОЕ ОКНО ПОЖЕРТВОВАНИЯ -->
     <div id="donationModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -182,20 +172,18 @@
         </div>
     </div>
     
-    <!-- МОДАЛЬНОЕ ОКНО ИСТОРИИ ПОЖЕРТВОВАНИЙ -->
-<div id="historyModal" class="modal">
-    <div class="modal-content history-modal">
-        <span class="close-modal">&times;</span>
-        <h3>📜 История пожертвований</h3>
-        <div id="historyList" class="history-list">
-            <!-- Сюда будет загружаться список -->
+    <div id="historyModal" class="modal">
+        <div class="modal-content history-modal">
+            <span class="close-modal">&times;</span>
+            <h3>📜 История пожертвований</h3>
+            <div id="historyList" class="history-list"></div>
+            <div class="history-total">
+                <strong>Всего пожертвовано:</strong> <span id="historyTotalAmount">0 ₽</span>
+            </div>
+            <button id="clearHistoryBtn" class="btn-outline-light" style="margin-top: 16px;">Очистить историю</button>
         </div>
-        <div class="history-total">
-            <strong>Всего пожертвовано:</strong> <span id="historyTotalAmount">0 ₽</span>
-        </div>
-        <button id="clearHistoryBtn" class="btn-outline-light" style="margin-top: 16px;">Очистить историю</button>
     </div>
-</div>
+
     <script src="../js/common.js"></script>
     <script src="../js/about.js"></script>
 </body>

@@ -70,7 +70,7 @@ class StorageService {
 // ===== ЕЖЕДНЕВНАЯ СТАТИСТИКА ПОЖЕРТВОВАНИЙ =====
 class DailyStats {
     constructor() {
-        this.storage = new StorageService('acehelp_daily');
+        this.storage = new StorageService('help_daily');
         this.data = this.storage.load({ lastDate: null, todayAmount: 0 });
         this.checkAndReset();
     }
@@ -109,7 +109,7 @@ class DailyStats {
 class DonationCart {
     constructor(dailyStats) {
         this.dailyStats = dailyStats;
-        this.storage = new StorageService('acehelp_donations');
+        this.storage = new StorageService('help_donations');
         this.items = this.storage.load([]);
         this.updateCounter();
     }
@@ -159,8 +159,8 @@ class DonationCart {
     }
 
     getHistory() {
-    return this.items;
-    }    
+        return this.items;
+    }
 
     updateCounter() {
         const counterElements = document.querySelectorAll('.cart-counter');
@@ -181,7 +181,12 @@ class DonationCart {
 // ===== ЗАГРУЗКА ДАННЫХ ИЗ JSON =====
 async function loadAllCampaigns() {
     try {
-        const response = await fetch('../data/campaigns.json');
+        let response = await fetch('data/campaigns.json');
+        
+        if (!response.ok) {
+            console.log('Пробуем загрузить из ../data/campaigns.json');
+            response = await fetch('../data/campaigns.json');
+        }
         
         if (!response.ok) {
             throw new Error(`HTTP ошибка: ${response.status}`);
@@ -193,6 +198,7 @@ async function loadAllCampaigns() {
         
     } catch (error) {
         console.error('Ошибка загрузки campaigns.json:', error);
+        console.log('Используем мок-данные');
         
         return {
             campaigns: getMockCampaigns(),
